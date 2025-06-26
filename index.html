@@ -10,13 +10,13 @@
             --item-size: 140px; /* Tamaño de cada elemento del ciclo */
             --center-size: 150px; /* Tamaño del círculo central */
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -27,7 +27,7 @@
             padding: 20px;
             color: #333;
         }
-        
+
         .infographic-container {
             background: white;
             border-radius: 30px;
@@ -52,12 +52,12 @@
             transform: translateX(-15%);
             width: 60%;
         }
-        
+
         .title {
             text-align: center;
             margin-bottom: 20px;
         }
-        
+
         .title h1 {
             color: #2c3e50;
             font-size: 32px;
@@ -71,12 +71,12 @@
             font-weight: 600;
             margin-bottom: 15px;
         }
-        
+
         .title p {
             color: #7f8c8d;
             font-size: 18px;
         }
-        
+
         .cycle-wrapper {
             position: relative;
             width: calc(var(--radius) * 2 + var(--item-size));
@@ -84,7 +84,7 @@
             margin: 20px auto;
             transition: transform 0.5s ease-in-out;
         }
-        
+
         .center-circle {
             position: absolute;
             top: 50%;
@@ -106,12 +106,12 @@
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 10;
         }
-        
+
         .center-circle:hover {
             transform: translate(-50%, -50%) scale(1.1);
             box-shadow: 0 15px 40px rgba(231, 76, 60, 0.5);
         }
-        
+
         .cycle-item {
             position: absolute;
             top: calc(50% - var(--item-size) / 2);
@@ -131,14 +131,14 @@
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Posicionamiento circular con transformaciones */
-        .trigger      { background: #e74c3c; transform: rotate(-90deg) translateX(var(--radius)) rotate(90deg); }
-        .thought      { background: #3498db; transform: rotate(-30deg) translateX(var(--radius)) rotate(30deg); }
-        .symptom      { background: #e67e22; transform: rotate(30deg) translateX(var(--radius)) rotate(-30deg); }
-        .behavior     { background: #27ae60; transform: rotate(90deg) translateX(var(--radius)) rotate(-90deg); }
-        .consequence  { background: #9b59b6; transform: rotate(150deg) translateX(var(--radius)) rotate(-150deg); }
-        .reinforcement{ background: #34495e; transform: rotate(210deg) translateX(var(--radius)) rotate(-210deg); }
+        .trigger       { background: #e74c3c; transform: rotate(-90deg) translateX(var(--radius)) rotate(90deg); }
+        .thought       { background: #3498db; transform: rotate(-30deg) translateX(var(--radius)) rotate(30deg); }
+        .symptom       { background: #e67e22; transform: rotate(30deg) translateX(var(--radius)) rotate(-30deg); }
+        .behavior      { background: #27ae60; transform: rotate(90deg) translateX(var(--radius)) rotate(-90deg); }
+        .consequence   { background: #9b59b6; transform: rotate(150deg) translateX(var(--radius)) rotate(-150deg); }
+        .reinforcement { background: #34495e; transform: rotate(210deg) translateX(var(--radius)) rotate(-210deg); }
 
         /* Efecto Hover: empuja el elemento hacia afuera */
         .trigger:hover       { z-index: 5; transform: rotate(-90deg) translateX(calc(var(--radius) + 10px)) rotate(90deg) scale(1.1); }
@@ -147,7 +147,7 @@
         .behavior:hover      { z-index: 5; transform: rotate(90deg) translateX(calc(var(--radius) + 10px)) rotate(-90deg) scale(1.1); }
         .consequence:hover   { z-index: 5; transform: rotate(150deg) translateX(calc(var(--radius) + 10px)) rotate(-150deg) scale(1.1); }
         .reinforcement:hover { z-index: 5; transform: rotate(210deg) translateX(calc(var(--radius) + 10px)) rotate(-210deg) scale(1.1); }
-        
+
         /* Efecto Activo: empuja aún más y destaca */
         .cycle-item.active { z-index: 6; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
         .trigger.active       { transform: rotate(-90deg) translateX(calc(var(--radius) + 20px)) rotate(90deg) scale(1.15); }
@@ -159,7 +159,7 @@
 
         .cycle-item .icon { font-size: 30px; margin-bottom: 8px; }
         .cycle-item .label { font-size: 14px; line-height: 1.2; }
-        
+
         /* Flechas de conexión */
         .feedback-arrows {
             position: absolute;
@@ -175,11 +175,11 @@
             opacity: 0.6;
             transition: all 0.3s;
         }
-        
+
         .arrow.active { stroke: #2c3e50; stroke-width: 5; opacity: 1; }
         .arrow-marker { fill: #95a5a6; transition: fill 0.3s; }
         .arrow.active .arrow-marker { fill: #2c3e50; }
-        
+
         /* Panel de información */
         .info-panel {
             position: absolute;
@@ -194,11 +194,11 @@
             transition: right 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             z-index: 100;
         }
-        
+
         .infographic-container.panel-active .info-panel {
             right: 40px; /* Posición final cuando está activo */
         }
-        
+
         .info-panel h3 { color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .info-panel .icon { font-size: 24px; }
         .info-panel p { color: #7f8c8d; line-height: 1.6; margin-bottom: 15px; }
@@ -207,18 +207,18 @@
         .info-panel .examples ul { list-style: none; font-size: 13px; color: #7f8c8d; }
         .info-panel .examples li { margin-bottom: 5px; padding-left: 15px; position: relative; }
         .info-panel .examples li:before { content: "▸"; position: absolute; left: 0; color: #e74c3c; }
-        
+
         .pulse { animation: pulse 2s infinite; }
         @keyframes pulse {
             0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
             50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.8; }
             100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
         }
-        
+
         .legend { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
         .legend-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #7f8c8d; }
         .legend-color { width: 20px; height: 20px; border-radius: 5px; }
-        
+
         .controls { text-align: center; margin-top: 30px; }
         .control-btn {
             padding: 10px 20px; margin: 0 10px; border: none; border-radius: 10px;
@@ -226,7 +226,7 @@
             transition: all 0.3s;
         }
         .control-btn:hover { background: #2980b9; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); }
-        
+
         @media (max-width: 1200px) {
             .infographic-container { flex-direction: column; }
             .infographic-container.panel-active .main-content { transform: none; width: 100%; }
@@ -267,7 +267,7 @@
                 <h2>Taller de Regulación Emocional. Juan Orta</h2>
                 <p>Cómo cada elemento refuerza y multiplica el siguiente.</p>
             </div>
-        
+
             <div class="cycle-wrapper">
                 <svg class="feedback-arrows" viewBox="0 0 660 660">
                     <defs>
@@ -275,21 +275,21 @@
                             <polygon points="0 0, 10 3.5, 0 7" class="arrow-marker" />
                         </marker>
                     </defs>
-                    
+
                     <path class="arrow" id="arrow1" d="M 450 160 C 490 220, 480 290, 450 330" marker-end="url(#arrowhead)" />
                     <path class="arrow" id="arrow2" d="M 450 390 C 440 450, 380 490, 330 490" marker-end="url(#arrowhead)" />
                     <path class="arrow" id="arrow3" d="M 270 490 C 210 490, 170 450, 170 390" marker-end="url(#arrowhead)" />
                     <path class="arrow" id="arrow4" d="M 170 330 C 140 290, 130 220, 170 160" marker-end="url(#arrowhead)" />
                     <path class="arrow" id="arrow5" d="M 210 130 C 260 130, 300 130, 330 130" marker-end="url(#arrowhead)" />
-                    
+
                     <path class="arrow" id="feedback1" d="M 200 450 Q 100 330 200 200" stroke-dasharray="8,8" marker-end="url(#arrowhead)" />
                     <path class="arrow" id="feedback2" d="M 450 200 Q 550 330 450 450" stroke-dasharray="8,8" marker-end="url(#arrowhead)" />
                 </svg>
-                
+
                 <div class="center-circle pulse" onclick="startAnimation()">
                     TU<br>ANSIEDAD
                 </div>
-                
+
                 <div class="cycle-item trigger" onclick="showInfo('trigger')">
                     <div class="icon">⚡</div> <div class="label">DISPARADOR</div>
                 </div>
@@ -309,7 +309,7 @@
                     <div class="icon">➕</div> <div class="label">REFORZAMIENTO</div>
                 </div>
             </div>
-            
+
             <div class="legend">
                 <div class="legend-item"><div class="legend-color" style="background: #e74c3c;"></div><span>Disparador</span></div>
                 <div class="legend-item"><div class="legend-color" style="background: #3498db;"></div><span>Proceso mental</span></div>
@@ -318,7 +318,7 @@
                 <div class="legend-item"><div class="legend-color" style="background: #9b59b6;"></div><span>Resultado</span></div>
                 <div class="legend-item"><div class="legend-color" style="background: #34495e;"></div><span>Refuerzo</span></div>
             </div>
-            
+
             <div class="controls">
                 <button class="control-btn" onclick="startAnimation()">Ver animación completa</button>
                 <button class="control-btn" onclick="resetView()">Reiniciar vista</button>
@@ -376,27 +376,27 @@
 
         function showInfo(type) {
             const data = cycleData[type];
-            
+
             document.getElementById('panelIcon').textContent = data.icon;
             document.getElementById('panelTitle').textContent = data.title;
             document.getElementById('panelDescription').textContent = data.description;
-            
+
             const examplesList = document.getElementById('examplesList');
             examplesList.innerHTML = data.examples.map(ex => `<li>${ex}</li>`).join('');
-            
+
             document.getElementById('panelExamples').style.display = 'block';
             container.classList.add('panel-active');
-            
+
             // Highlight selected item
             document.querySelectorAll('.cycle-item').forEach(item => item.classList.remove('active'));
             document.querySelector(`.${type}`).classList.add('active');
-            
+
             activateArrows(type);
         }
 
         function activateArrows(type) {
             document.querySelectorAll('.arrow').forEach(arrow => arrow.classList.remove('active'));
-            
+
             const arrowMap = {
                 trigger: ['arrow5'],
                 thought: ['arrow5', 'arrow1'],
@@ -405,7 +405,7 @@
                 consequence: ['arrow3', 'arrow4', 'feedback1'],
                 reinforcement: ['arrow4', 'feedback1', 'feedback2']
             };
-            
+
             if (arrowMap[type]) {
                 arrowMap[type].forEach(arrowId => {
                     const el = document.getElementById(arrowId);
@@ -418,7 +418,7 @@
             resetView();
             let currentStep = 0;
             const steps = ['trigger', 'thought', 'symptom', 'behavior', 'consequence', 'reinforcement'];
-            
+
             animationInterval = setInterval(() => {
                 if (currentStep < steps.length) {
                     showInfo(steps[currentStep]);
